@@ -1,6 +1,10 @@
 # ![](vscode/logo.png) `pony` 0.0.1
 ## скриптовый язык общего назначения
 
+(c) Dmitry Ponyatov <<dponyatov@gmail.com>> 2025 MIT
+
+github: https://github.com/ponyatov/pony
+
 хочу написать новый скриптовый язык:
 
 - автоматизация типовых задач на десктопе
