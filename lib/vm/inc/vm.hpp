@@ -18,8 +18,9 @@
 /// @{
 #include <stdint.h>
 typedef uint8_t byte;   ///< single byte
-typedef uint16_t addr;  ///< @ref M address (limited for MCU little memory)
-typedef int32_t cell;   ///< single integer (32-bit for MCU)
+typedef uint16_t addr;  ///< @ref M address (limited for little memory)
+typedef int32_t cell;   ///< single integer (32-bit for MCU compatibility)
+typedef float fcell;    ///< single floating point (MCU/embedded)
 /// @}
 
 /// @defgroup memory memory
@@ -42,7 +43,7 @@ extern byte Dp;      ///< @ref D top pointer
 /// hybernation, @ref save bytecode file dump, or cross-node migration
 struct bcHeader {
     /// signature
-    char magic[4] = "bcx";
+    char magic[5] = "pony";
     /// @ref Cp initial value
     addr Cp = 0;
     /// @brief @ref Ip initial value (entry point)

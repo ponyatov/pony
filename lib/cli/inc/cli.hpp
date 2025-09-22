@@ -5,7 +5,11 @@
 #pragma once
 
 #include "os.hpp"
+#include "vm.hpp"
+
 #include <string>
+#include <map>
+#include <vector>
 
 /// @defgroup lexer lexer
 /// @ingroup cli
@@ -32,6 +36,20 @@ extern int yyparse();                  ///< parser (`bison`)
 extern void yyerror(const char *msg);  ///< syntax error callback
 
 #include "cli.yacc.hpp"
+
+/// @}
+
+/// @defgroup compiler compiler
+/// @brief @ref bytecode compiler
+/// @{
+
+extern std::map<std::string, addr> label;  ///< known labels
+
+extern addr compile(byte b);
+extern addr compile(Op op);
+extern addr compile(addr a);
+extern addr compile(cell n);
+extern addr compile(fcell f);
 
 /// @}
 
