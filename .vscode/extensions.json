@@ -19,20 +19,12 @@
         // parser
         "daohong-emilio.yash",
         "rreverser.ragel",
-        // "serghei-iakovlev.language-lemon",
         // embedded
         "dan-c-underwood.arm",
         "zixuanwang.linkerscript",
         "ms-vscode.vscode-serial-monitor",
-        // "basdp.language-gas-x86",
-        // "espressif.esp-idf-extension",
         // Python
         "ms-python.python",
         "ms-python.autopep8",
-        "charliermarsh.ruff",
-        // Rust
-        "rust-lang.rust-analyzer",
-        "tamasfe.even-better-toml",
-        "vadimcn.vscode-lldb",
     ]
 }
