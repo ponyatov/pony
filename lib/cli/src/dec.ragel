@@ -1,0 +1,3 @@
+#include "cli.hpp"
+
+int dec(char *val) { return atoi(val); }

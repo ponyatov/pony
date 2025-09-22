@@ -1,22 +1,15 @@
-
-CWD = $(CURDIR)
-
-PONY_VER = 0.32.0
-PONY	 = ponyc-$(PONY_VER)
-PONY_GZ  = $(PONY).tar.gz
-
-PROC_NUM = $(shell grep proc /proc/cpuinfo|wc -l)
-
-build: $(PONY)/README.md
-	cd $(PONY) ;\
-	$(MAKE) distclean ;\
-	$(MAKE) LLVM_CONFIG=llvm-config-3.9 prefix=$(CWD)/_install static=true -j$(PROC_NUM) ;\
-	$(MAKE) install
-
-src: $(PONY)/README.md
-$(PONY)/README.md: $(PONY_GZ)
-	tar zx < $< && touch $@
-
-gz: $(PONY_GZ)
-$(PONY_GZ):
-	wget -c -O $@ https://github.com/ponylang/ponyc/archive/$(PONY_VER).tar.gz
+include mk/var.mk
+include mk/version.mk
+include mk/dir.mk
+include mk/tool.mk
+include mk/cross.mk
+include mk/pkg.mk
+include mk/src.mk
+include mk/all.mk
+include mk/format.mk
+include mk/rule.mk
+include mk/doc.mk
+include mk/ref.mk
+include mk/gz.mk
+include mk/install.mk
+include mk/ai.mk
